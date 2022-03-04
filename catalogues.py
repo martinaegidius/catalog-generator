@@ -43,14 +43,15 @@ pdf.rectborder()
 images = loadAllImages(opDir)#load all images in dir
 
 for i in range(len(images)//2):
-    #for j in range(2): #number of images on page
-    if (i%2==0): #generate new page every time 4 images have been plotted
+    for j in range(2): #number of images on page
+        #if (i%2==0): #generate new page every time 4 images have been plotted
+        pdf.addImage(15,(j*(297/2)+30),images[i])
+        pdf.addImage(85+25,(j*(297/2)+30),images[i+1])
+    if(i!=len(images)//2 - 1): #add new page if imagelist has not been exhausted
         pdf.add_page()
         pdf.rectborder()
-        
-    pdf.addImage(15,(i*(297/2)+30),images[i])
-    pdf.addImage(85+25,(i*(297/2)+30),images[i+1])
-        
+    
+            
     
 #addImage(10,30
 
