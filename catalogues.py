@@ -1,5 +1,4 @@
 from fpdf import FPDF 
-import fpdf
 import os #for dirs
 import glob #for path-handling
 
@@ -51,9 +50,10 @@ for i in range(len(images)//2):
         pdf.add_page()
         pdf.rectborder()
     
-            
-    
-#addImage(10,30
 
 
 pdf.output(outputPath,'F')
+
+#log: need to sort images so they are in correct order ie. før always left, after always right 
+#need to add page number and operation title
+# need to add printzlau logo 
